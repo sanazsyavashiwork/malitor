@@ -1,5 +1,6 @@
 import { ROUTES } from "@/constValues/Routes";
 import { useGetMemberCookie } from "@/hooks/useGetMemberCookie";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const SimpleStepItem = ({
@@ -60,7 +61,7 @@ const SimpleStepItem = ({
           justifyContent: "start",
         }}
       >
-        <a
+        <Link
           href={
             shouldHaveMovadi
               ? lengthOfMember > 0
@@ -75,7 +76,7 @@ const SimpleStepItem = ({
           // }}
         >
           {title}
-        </a>
+        </Link>
         <p style={descriptionStyle}>{description}</p>
       </div>
     </div>

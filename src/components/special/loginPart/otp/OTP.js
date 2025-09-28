@@ -10,6 +10,8 @@ import { GenericInputField } from "@/components/general/GenericInputField/Generi
 import useToast from "@/hooks/useToast";
 import { Timer } from "../../Timer/Timer";
 import FormLink from "../../formLink/FormLink";
+import Link from "next/link";
+import Image from "next/image";
 
 const OTPForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -76,7 +78,7 @@ const OTPForm = () => {
         {/* Header */}
         <div className={styles["login-header-form"]}>
           <div className={styles["back-arrow"]}>
-            <a
+            <Link
               href={
                 isForgetPasswordBool
                   ? ROUTES.AUTH.RESET_PASSWORD
@@ -84,7 +86,7 @@ const OTPForm = () => {
               }
             >
               <ArrowRight size={24} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -92,14 +94,14 @@ const OTPForm = () => {
         <div className={styles["login-content"]}>
           <div className={styles["logo-container"]}>
             <div className={styles["logo"]}>
-              <a href="/">
-                <img
+              <Link href="/">
+                <Image
                   src={"/assets/img/sampleIcon.png"}
                   className="img-fluid"
                   style={{ width: "100px" }}
                   alt={"logo"}
                 />
-              </a>
+              </Link>
             </div>
           </div>
 

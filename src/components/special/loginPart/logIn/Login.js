@@ -14,6 +14,7 @@ import { useErrorApiHandler } from "@/hooks/useErrorApiHandler";
 import { ROLE_KEYS } from "@/constValues/roles";
 import Image from "next/image";
 import { ROUTES } from "@/constValues/Routes";
+import Link from "next/link";
 
 const LoginForm = () => {
   const { successToast, errorToast } = useToast();
@@ -79,13 +80,13 @@ const LoginForm = () => {
           <div className={styles["form-content"]}>
             <div className={styles["logo-container"]}>
               <div className={styles["logo"]}>
-                <a href="/">
-                  <img
+                <Link href="/">
+                  <Image
                     src={"/assets/img/sampleIcon.png"}
                     className={styles["img-fluid"]}
                     alt={"logo"}
                   />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -136,12 +137,12 @@ const LoginForm = () => {
                     <div className={styles["form-links"]}>
                       <p className={styles["signup-link"]}>
                         حساب کاربری ندارید؟{" "}
-                        <a
+                        <Link
                           href={ROUTES.AUTH.SIGN_UP}
                           className={styles["signup-link-text"]}
                         >
                           ثبت نام کنید
-                        </a>
+                        </Link>
                       </p>
                     </div>
                   </Form>

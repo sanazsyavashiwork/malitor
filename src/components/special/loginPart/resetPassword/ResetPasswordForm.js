@@ -6,6 +6,8 @@ import ResetPasswordFormvalidationSchema from "./ResetPasswordFormvalidationSche
 import { PhoneInputField } from "@/components/general/GenericInputField/PhoneInputField";
 import { ROUTES } from "@/constValues/Routes";
 import useToast from "@/hooks/useToast";
+import Link from "next/link";
+import Image from "next/image";
 
 const ResetPasswordForm = () => {
   const {
@@ -32,9 +34,9 @@ const ResetPasswordForm = () => {
         {/* Header */}
         <div className={styels["login-header-form"]}>
           <div className={styels["back-arrow"]}>
-            <a href={ROUTES.AUTH.SIGN_IN}>
+            <Link href={ROUTES.AUTH.SIGN_IN}>
               <ArrowRight size={24} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -42,8 +44,8 @@ const ResetPasswordForm = () => {
         <div className={styels["login-content"]}>
           <div className={styels["logo-container"]}>
             <div className={styels["logo"]}>
-              <a href="/">
-                <img
+              <Link href="/">
+                <Image
                   src={"/assets/img/sampleIcon.png"}
                   className={styels["img-fluid"]}
                   style={{ width: "100px" }}
@@ -52,7 +54,7 @@ const ResetPasswordForm = () => {
                     this.setState({ home: true });
                   }}
                 />
-              </a>
+              </Link>
             </div>
           </div>
 

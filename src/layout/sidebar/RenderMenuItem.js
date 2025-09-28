@@ -48,7 +48,7 @@ export const RenderMenuItem = ({ item }) => {
       style={{ width: "100%", height: "100%", padding: "0px" }}
     >
       {!item.subSet?.length > 0 ? (
-        <a
+        <Link
           href={
             item.shouldHaveMovadi
               ? lengthOfMember > 0
@@ -89,7 +89,7 @@ export const RenderMenuItem = ({ item }) => {
               {item.title}
             </span>
           </span>
-        </a>
+        </Link>
       ) : (
         <>
           <div
@@ -138,7 +138,7 @@ export const RenderMenuItem = ({ item }) => {
                     isActive(child.path) ? "active-item" : ""
                   }`}
                 >
-                  <a
+                  <Link
                     href={`${child.path}`}
                     className="full-width-flex-row"
                     style={{
@@ -181,7 +181,7 @@ export const RenderMenuItem = ({ item }) => {
                         {child.title}
                       </span>
                     </span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -2,6 +2,7 @@ import React from "react";
 import "./generalFormTitleShow.css";
 import { ChevronRight } from "lucide-react";
 import useMobileSize from "@/utils/useMobileSize";
+import Link from "next/link";
 
 const GeneralFormTitleShow = ({
   title,
@@ -28,7 +29,7 @@ const GeneralFormTitleShow = ({
 
       {hasOuterURL && (
         <div className="right-section">
-          <a
+          <Link
             href={outerUrl}
             style={{
               display: "flex",
@@ -42,7 +43,7 @@ const GeneralFormTitleShow = ({
             <ChevronRight size={24} />
 
             <h5 className={"form-back"}>برگشت</h5>
-          </a>
+          </Link>
         </div>
       )}
     </div>

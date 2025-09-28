@@ -38,6 +38,7 @@
     "react-slick": "^0.31.0",
     "reactstrap": "^9.2.3",
     "sass": "^1.89.2",
+    "slick-carousel": "^1.8.1",
     "yup": "^1.6.1"
   },
   "devDependencies": {

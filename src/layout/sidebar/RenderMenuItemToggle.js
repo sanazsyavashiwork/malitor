@@ -55,7 +55,7 @@ const RenderMenuItemToggle = ({ item }) => {
         alignItems: "center",
       }}
     >
-      <a
+      <Link
         href={
           item.shouldHaveMovadi
             ? lengthOfMember > 0
@@ -93,7 +93,7 @@ const RenderMenuItemToggle = ({ item }) => {
             </span>
           </Tippy>
         </span>
-      </a>
+      </Link>
     </li>
   );
 };

@@ -2,6 +2,7 @@ import GButton from "@/components/general/GeneralButton/GeneralButton";
 import styles from "../ListMember.module.scss";
 import { ROUTES } from "@/constValues/Routes";
 import { UserPlus2, Users, TrendingUp } from "lucide-react";
+import Link from "next/link";
 
 export const renderHeader = (customerCount = 0) => {
   return (
@@ -11,7 +12,10 @@ export const renderHeader = (customerCount = 0) => {
           <h1 className={styles.pageTitle}>مدیریت مشتریان</h1>
         </div>
 
-        <a href={ROUTES.PRIVATE.CUSTOMERS_ADD} className={styles.headerActions}>
+        <Link
+          href={ROUTES.PRIVATE.CUSTOMERS_ADD}
+          className={styles.headerActions}
+        >
           <GButton
             type="primary"
             variant="filled"
@@ -21,7 +25,7 @@ export const renderHeader = (customerCount = 0) => {
             size="medium"
             icon={<UserPlus2 size={18} style={{ marginRight: "12px" }} />}
           />
-        </a>
+        </Link>
       </div>
     </div>
   );

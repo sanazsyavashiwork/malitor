@@ -98,52 +98,6 @@ const EditCustomers = ({ id }) => {
                     const allErrors = {
                       ...errors,
                     };
-                    useEffect(() => {
-                      if (
-                        submitCount > 0 &&
-                        Object.keys(allErrors).length > 0
-                      ) {
-                        const fieldOrder = [
-                          "active", // چک‌باکس اول
-                          "customer", // چک‌باکس دوم
-                          "provider", // چک‌باکس سوم
-                          "name", // نام
-                          "customerType", // نوع (سلکت)
-                          "identificationCode", // کد شناسایی
-                          "phoneNumber", // تلفن
-                          "faxNumber", // فاکس
-                          "mobileNumber", // تلفن همراه
-                          "nationalId", // شناسه ملی
-                          "economicCode", // شماره اقتصادی
-                          "registrationNumber", // شماره ثبت
-                          "passportNumber", // شماره گذرنامه
-                          "email", // پست الکترونیک
-                          "postalCode", // کد پستی
-                          "province", // استان
-                          "city", // شهرستان
-                          "address", // آدرس
-                        ];
-
-                        const firstErrorField = fieldOrder.find(
-                          (field) => allErrors[field] && touched[field]
-                        );
-
-                        if (firstErrorField) {
-                          setTimeout(() => {
-                            const element = document.querySelector(
-                              `[name="${firstErrorField}"]`
-                            );
-                            if (element) {
-                              element.focus();
-                              element.scrollIntoView({
-                                behavior: "smooth",
-                                block: "center",
-                              });
-                            }
-                          }, 100);
-                        }
-                      }
-                    }, [allErrors, touched, submitCount]);
 
                     return (
                       <Form>

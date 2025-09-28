@@ -199,40 +199,6 @@ const EditUser = ({ id }) => {
                     ...serverErrors,
                   };
 
-                  useEffect(() => {
-                    if (submitCount > 0 && Object.keys(allErrors).length > 0) {
-                      const fieldOrder = [
-                        "firstname",
-                        "lastname",
-                        "nationalId",
-                        "phoneNumber",
-                        "email",
-                        "username",
-                        "password",
-                        "creditExpirationDate",
-                      ];
-
-                      const firstErrorField = fieldOrder.find(
-                        (field) => allErrors[field] && touched[field]
-                      );
-
-                      if (firstErrorField) {
-                        setTimeout(() => {
-                          const element = document.querySelector(
-                            `[name="${firstErrorField}"]`
-                          );
-                          if (element) {
-                            element.focus();
-                            element.scrollIntoView({
-                              behavior: "smooth",
-                              block: "center",
-                            });
-                          }
-                        }, 100);
-                      }
-                    }
-                  }, [allErrors, touched, submitCount]);
-
                   return (
                     <Form>
                       <FormFields errors={allErrors} touched={touched} />

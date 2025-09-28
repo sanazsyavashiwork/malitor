@@ -110,45 +110,7 @@ const AddMembers = () => {
                     ...errors,
                     ...serverErrors,
                   };
-                  useEffect(() => {
-                    if (submitCount > 0 && Object.keys(allErrors).length > 0) {
-                      const fieldOrder = [
-                        "name",
-                        "nationalId",
-                        "economicCode",
-                        "registrationNumber",
-                        "invoiceSerialNumberBeginning",
-                        "reactionaryInvoiceSerialNumberBeginning",
-                        "phoneNumber",
-                        "faxNumber",
-                        "postalCode",
-                        "province",
-                        "city",
-                        "address",
-                        "memoryId",
-                        "privateKey",
-                      ];
 
-                      const firstErrorField = fieldOrder.find(
-                        (field) => allErrors[field] && touched[field]
-                      );
-
-                      if (firstErrorField) {
-                        setTimeout(() => {
-                          const element = document.querySelector(
-                            `[name="${firstErrorField}"]`
-                          );
-                          if (element) {
-                            element.focus();
-                            element.scrollIntoView({
-                              behavior: "smooth",
-                              block: "center",
-                            });
-                          }
-                        }, 100);
-                      }
-                    }
-                  }, [allErrors, touched, submitCount]);
                   return (
                     <Form>
                       <FormFields errors={allErrors} touched={touched} />

@@ -9,6 +9,8 @@ import { ROUTES } from "@/constValues/Routes";
 import { PasswordField } from "@/components/general/GenericInputField/PasswordField";
 import FormLink from "../../formLink/FormLink";
 import useToast from "@/hooks/useToast";
+import Link from "next/link";
+import Image from "next/image";
 
 const PasswordForm = () => {
   const {
@@ -39,9 +41,9 @@ const PasswordForm = () => {
         {/* Header */}
         <div className={styles["login-header-form"]}>
           <div className={styles["back-arrow"]}>
-            <a href={ROUTES.AUTH.SIGN_IN}>
+            <Link href={ROUTES.AUTH.SIGN_IN}>
               <ArrowRight size={24} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -49,14 +51,14 @@ const PasswordForm = () => {
         <div className={styles["login-content"]}>
           <div className={styles["logo-container"]}>
             <div className={styles["logo"]}>
-              <a href="/">
-                <img
+              <Link href="/">
+                <Image
                   src={"/assets/img/sampleIcon.png"}
                   className={styles["img-fluid"]}
                   style={{ width: "100px" }}
                   alt={"logo"}
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

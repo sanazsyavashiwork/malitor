@@ -15,6 +15,7 @@ import { PhoneInputField } from "@/components/general/GenericInputField/PhoneInp
 import { usePostRegisterQuery } from "@/hooks/AuthenticationController/usePostRegisterQuery";
 import Image from "next/image";
 import { ROUTES } from "@/constValues/Routes";
+import Link from "next/link";
 
 const SignupForm = () => {
   const { successToast, errorToast } = useToast();
@@ -81,14 +82,14 @@ const SignupForm = () => {
           <div className={styles["login-content"]}>
             <div className={styles["logo-container"]}>
               <div className={styles["logo"]}>
-                <a href="/">
-                  <img
+                <Link href="/">
+                  <Image
                     src={"/assets/img/sampleIcon.png"}
                     className={styles["img-fluid"]}
                     style={{ width: "100px" }}
                     alt={"logo"}
                   />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -192,12 +193,12 @@ const SignupForm = () => {
                       <div className={styles["form-links"]}>
                         <p className={styles["signup-link"]}>
                           حساب کاربری دارید؟{" "}
-                          <a
+                          <Link
                             href={ROUTES.AUTH.SIGN_IN}
                             className={styles["signup-link-text"]}
                           >
                             وارد شوید
-                          </a>
+                          </Link>
                         </p>
                       </div>
                     </Form>
