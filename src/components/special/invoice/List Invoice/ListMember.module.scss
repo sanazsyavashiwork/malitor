@@ -1,0 +1,225 @@
+// Variables
+$primary-color: #01494b;
+$border-color: rgba(226, 232, 240, 0.8);
+$text-muted: #64748b;
+$text-primary: #334155;
+$background-light: #f8fafc;
+$background-secondary: #f1f5f9;
+$white: #ffffff;
+$focus-color: #3b82f6;
+$focus-shadow: rgba(59, 130, 246, 0.1);
+$box-shadow-light: 0 2px 12px rgba(0, 0, 0, 0.06);
+$box-shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+// Mixins
+@mixin card-style {
+  background: $white;
+  border-radius: 16px;
+  box-shadow: $box-shadow-medium;
+  border: 1px solid $border-color;
+}
+
+@mixin input-focus {
+  &:focus {
+    outline: none;
+    border-color: $focus-color;
+    background: $white;
+    box-shadow: 0 0 0 3px $focus-shadow;
+  }
+}
+
+@mixin responsive-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// Main container
+.memberListContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: 100vh;
+
+  @include responsive-mobile {
+    padding: 16px;
+  }
+}
+
+// Page header
+.pageHeader {
+  @include card-style;
+  padding: 32px;
+  margin-bottom: 24px;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @include responsive-mobile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.titleSection {
+  flex: 1;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: $primary-color;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, $primary-color, $primary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  @include responsive-mobile {
+    font-size: 24px;
+  }
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+  @include responsive-mobile {
+    justify-content: center;
+  }
+}
+
+// Filter section
+.filterSection {
+  @include card-style;
+  box-shadow: $box-shadow-light;
+  padding: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include responsive-mobile {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.searchContainer {
+  flex: 2;
+  min-width: 300px;
+
+  @include responsive-mobile {
+    min-width: auto;
+    flex: none;
+  }
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 16px 12px 48px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: $background-light;
+
+  @include input-focus;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $text-muted;
+  font-size: 18px;
+}
+
+.filterContainer {
+  flex: 1;
+  min-width: 200px;
+
+  @include responsive-mobile {
+    min-width: auto;
+    flex: none;
+  }
+}
+
+.filterSelect {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  background: $background-light;
+  transition: all 0.3s ease;
+
+  @include input-focus;
+}
+
+.resultsInfo {
+  margin-right: auto;
+
+  @include responsive-mobile {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.resultsCount {
+  font-size: 14px;
+  color: $text-muted;
+  background: $background-secondary;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+// Table section
+.tableContainer {
+  @include card-style;
+  overflow: hidden;
+}
+
+// Empty state
+.emptyState {
+  text-align: center;
+  padding: 80px 40px;
+  color: $text-muted;
+
+  h3 {
+    font-size: 24px;
+    margin: 0 0 12px 0;
+    color: $text-primary;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  opacity: 0.6;
+}

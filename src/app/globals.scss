@@ -1,0 +1,374 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i");
+
+// utils
+@import "../../public/assets/scss/utils/variables";
+@import "../../public/assets/scss/utils/mixins";
+
+// base
+@import "../../public/assets/scss/base/typography";
+@import "../../public/assets/scss/base/reset";
+
+// components
+// @import "../../public/assets/scss/components/keyframes";
+// @import "../../public/assets/scss/components/breadcrumb";
+// @import "../../public/assets/scss/components/buttons";
+// @import "../../public/assets/scss/components/labels";
+// @import "../../public/assets/scss/components/slider";
+@import "../../public/assets/scss/components/form";
+// @import "../../public/assets/scss/components/blog";
+// @import "../../public/assets/scss/components/about";
+// @import "../../public/assets/scss/components/service";
+// @import "../../public/assets/scss/components/feature";
+// @import "../../public/assets/scss/components/property";
+// @import "../../public/assets/scss/components/pagination";
+// @import "../../public/assets/scss/components/portfolio";
+// @import "../../public/assets/scss/components/map";
+// @import "../../public/assets/scss/components/slick";
+// @import "../../public/assets/scss/components/testimonial";
+// @import "../../public/assets/scss/components/coming_soon";
+// @import "../../public/assets/scss/components/loader";
+// @import "../../public/assets/scss/components/customizer";
+
+// layout
+// @import "../../public/assets/scss/layout/header";
+// @import "../../public/assets/scss/layout/footer";
+// @import "../../public/assets/scss/layout/dark";
+// @import "../../public/assets/scss/layout/rtl";
+
+// pages
+// @import "../../public/assets/scss/pages/inner-pages";
+// @import "../../public/assets/scss/pages/text-affect";
+
+// Template
+@import "../../public/assets/scss/template/template";
+@import "../../public/assets/scss/template/responsive";
+
+// slick slider
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+// animate css
+@import "~animate.css/animate.css";
+
+// bootstrap css
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+// font-awesome
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+//map css
+@import "leaflet/dist/leaflet.css";
+
+/* فونت‌های انگلیسی از Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i,800,800i");
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i");
+
+/* فونت‌های فارسی از منابع معتبر */
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css");
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/iransan-font@v5.0.0/dist/font-face.css");
+
+/* یا به جای CDN، از فایل‌های محلی استفاده کنید: */
+/* 
+@font-face {
+  font-family: 'Vazir';
+  src: url('./fonts/Vazir-Regular.woff2') format('woff2'),
+       url('./fonts/Vazir-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('./fonts/Vazir-Bold.woff2') format('woff2'),
+       url('./fonts/Vazir-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANSans';
+  src: url('./fonts/IRANSans-Regular.woff2') format('woff2'),
+       url('./fonts/IRANSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+$base: #01494b;
+$baseHover: #01494b;
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --base: #01494b;
+  --baseHover: #01494b;
+  $base: #01494b;
+  $baseHover: #01494b;
+
+  /* ترتیب صحیح فونت‌ها: فارسی اول */
+  --font-persian: "Vazir", "IRANSans", "Tahoma", sans-serif;
+  --font-english: "Montserrat", "Rubik", sans-serif;
+  --font-mixed: "Vazir", "IRANSans", "Montserrat", "Rubik", "Tahoma", sans-serif;
+}
+
+/* تنظیم فونت پیش‌فرض */
+* {
+  font-family: var(--font-mixed) !important;
+}
+
+/* تنظیمات مخصوص Tailwind */
+@layer base {
+  html {
+    font-family: var(--font-mixed);
+  }
+
+  body {
+    font-family: var(--font-mixed);
+  }
+}
+
+/* تنظیمات Tailwind Theme */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-mixed);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-mixed);
+}
+
+/* کلاس‌های کمکی برای فونت‌ها */
+.font-persian {
+  font-family: var(--font-persian) !important;
+}
+
+.font-english {
+  font-family: var(--font-english) !important;
+}
+
+.font-vazir {
+  font-family: "Vazir", "Tahoma", sans-serif !important;
+}
+
+.font-iransan {
+  font-family: "IRANSans", "Tahoma", sans-serif !important;
+}
+
+.trust-blue {
+  color: #01494b;
+}
+
+input:focus {
+  outline: none !important;
+}
+
+ul {
+  padding-inline-start: 0px !important;
+  unicode-bidi: isolate;
+  padding-left: 0rem !important;
+}
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: #333 !important;
+  background-color: white !important;
+  border-color: #ddd !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: black !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #ddd !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #01494b !important;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.layout-home3 {
+  .bg-layout-3 {
+    @extend %background-common;
+    height: 600px;
+    @extend %flex-center;
+  }
+
+  .light-bg-1 {
+    background-image: url(../../images/blog/1.jpg);
+  }
+
+  .light-bg-2 {
+    background-image: url(../../images/blog/2.jpg);
+  }
+
+  .banner-3 {
+    width: 48%;
+    padding: 60px;
+    background-color: rgba($white, 0.7);
+    box-shadow: 2px 0px 30px 40px rgba(255, 255, 255, 0.7);
+
+    h1 {
+      line-height: 1.5;
+      color: $title-color;
+      margin: 20px 0;
+      font-size: calc(26px + (42 - 26) * ((100vw - 320px) / (1920 - 320)));
+    }
+  }
+
+  .home-slider-3 {
+    .slick-slide {
+      margin-bottom: 0;
+    }
+  }
+}
+
+input:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Override کردن استایل های Bootstrap */
+.form-control:focus,
+.form-select:focus,
+input.form-control:focus,
+textarea.form-control:focus,
+input:focus,
+textarea:focus {
+  border-color: transparent !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+}
+
+/* حذف کامل border از همه حالات */
+.form-control,
+input,
+textarea {
+  border: none !important;
+}
+
+.form-control:focus,
+input:focus,
+textarea:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Override همه form control های Bootstrap */
+.form-control {
+  border: none !important;
+}
+
+.form-control:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* برای input و textarea های بدون کلاس Bootstrap */
+input:not(.btn):focus,
+textarea:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #01494b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #038388;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+.navLink:focus,
+.ctaBtn:focus,
+.btnPrimary:focus,
+.btnSecondary:focus,
+.btnWhite:focus,
+.footerLink:focus {
+  outline: 2px solid #01494b;
+  outline-offset: 2px;
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

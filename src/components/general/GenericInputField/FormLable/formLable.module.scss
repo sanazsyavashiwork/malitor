@@ -1,0 +1,25 @@
+.form-label {
+  margin-bottom: 0.5rem;
+  font-size: 13px !important;
+  font-weight: 600;
+  color: #374151;
+  text-align: start !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+}
+
+.info-icon {
+  margin-right: 0.25rem;
+  cursor: pointer;
+  color: #01494b !important;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #01494b;
+  }
+}
+
+.icon-rotate {
+  transform: rotate(180deg);
+}

@@ -1,0 +1,284 @@
+// InvoicePrint.module.scss
+.invoiceContainer {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 15mm;
+  background: white;
+  border: 2px solid #333;
+  font-family: "Tahoma", "Arial", sans-serif;
+  font-size: 12px;
+  direction: rtl;
+  color: #000;
+  position: relative;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+
+  h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.headerInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Company Info */
+.companySection {
+  border: 1px solid #333;
+  margin-bottom: 15px;
+  background: #f9f9f9;
+}
+
+.sectionTitle {
+  background: #e0e0e0;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.infoRow {
+  display: flex;
+  border-bottom: 1px solid #333;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.infoCell {
+  padding: 8px;
+  border-left: 1px solid #333;
+  flex: 1;
+
+  &:last-child {
+    border-left: none;
+  }
+}
+
+.label {
+  font-weight: bold;
+  background: #f0f0f0;
+  text-align: center;
+}
+
+/* Items Table */
+.itemsSection {
+  margin-bottom: 20px;
+  border: 1px solid #333;
+}
+
+.itemsTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    border: 1px solid #333;
+    padding: 8px 5px;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  th {
+    background: #e0e0e0;
+    font-weight: bold;
+  }
+}
+
+.descriptionCol {
+  width: 200px;
+  text-align: right !important;
+}
+
+.numberCol {
+  width: 80px;
+}
+
+.amountCol {
+  width: 100px;
+}
+
+.rowNumber {
+  width: 30px;
+}
+
+.emptyRows {
+  height: 30px;
+
+  td {
+    border-bottom: 1px solid #333;
+  }
+}
+
+/* Total Section */
+.totalSection {
+  margin-top: 10px;
+  display: flex;
+  justify-content: end !important;
+  width: 100%;
+}
+
+.totalBox {
+  // border: 1px solid #333;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between !important;
+  width: 100%;
+}
+
+/* Footer */
+.footerSection {
+  margin-top: 20px;
+  border: 1px solid #333;
+  padding: 10px;
+  background: #f9f9f9;
+}
+
+.footerRow {
+  display: flex;
+  margin-bottom: 5px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footerLabel {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* QR Code */
+.qrSection {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-align: center;
+}
+
+.qrCode {
+  width: 60px;
+  height: 60px;
+  background: #000;
+  display: inline-block;
+  margin-bottom: 5px;
+
+  // QR Code pattern simulation
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      #fff 2px,
+      #fff 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      #fff 2px,
+      #fff 4px
+    );
+}
+
+/* Watermark */
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 60px;
+  color: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  pointer-events: none;
+  font-weight: bold;
+}
+
+/* Print Button */
+.printButton {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btnPrint {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background: #0056b3;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .invoiceContainer {
+    border: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    font-size: 11px;
+  }
+
+  .printButton {
+    display: none;
+  }
+
+  .qrSection {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .invoiceContainer {
+    padding: 10px;
+    font-size: 10px;
+  }
+
+  .header h1 {
+    font-size: 16px;
+  }
+
+  .headerInfo {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .infoRow {
+    flex-wrap: wrap;
+  }
+
+  .infoCell {
+    min-width: 50%;
+  }
+
+  .itemsTable {
+    font-size: 9px;
+  }
+
+  .footerRow {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

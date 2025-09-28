@@ -1,0 +1,64 @@
+$base: #01494b;
+$baseHover: #01494b;
+.menu-item {
+  margin-bottom: 20px !important;
+  width: 100% !important;
+  height: 100% !important;
+  text-align: start !important;
+  align-items: start !important;
+  color: #01494b !important;
+  text-decoration: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start;
+  padding: 0px !important;
+}
+
+.menu-item:hover {
+  background-color: #01494b !important ;
+  color: white !important;
+  border-radius: 8px !important;
+}
+
+.active-item {
+  background-color: #01494b !important;
+  color: white !important;
+  border-radius: 8px !important;
+
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.full-width-flex-row {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.react-tooltip {
+  font-size: 14px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-title {
+  display: flex !important;
+  align-items: start !important;
+  justify-content: flex-start !important;
+  flex-direction: row-reverse !important;
+  font-size: 12px !important;
+  width: 100% !important;
+  height: 100% !important;
+  color: #01494b !important;
+  padding: 10px !important;
+}
+
+.menu-title :hover {
+  color: white;
+}

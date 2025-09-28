@@ -1,0 +1,549 @@
+// Variables - بهبود یافته
+$primary-color: #01494b;
+$primary-light: #0891b2;
+$border-color: #e2e8f0;
+$gray-50: #f8fafc;
+$gray-100: #f1f5f9;
+$gray-200: #e5e7eb;
+$gray-500: #64748b;
+$gray-600: #475569;
+$gray-700: #334155;
+$gray-900: #1e293b;
+$blue-600: #2563eb;
+$red-600: #dc2626;
+$green-600: #16a34a;
+$white: #ffffff;
+$shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+$shadow-md: 0 4px 16px rgba(15, 23, 42, 0.06);
+$shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.12);
+$shadow-hover: 0 8px 24px rgba(15, 23, 42, 0.08);
+
+// General Table Styles - بهبود قابل توجه
+.general-table {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &__table {
+    min-width: 100%;
+    background-color: $white;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  // Header بهبود یافته
+  &__header {
+    background: linear-gradient(135deg, $gray-50, $gray-100);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: $primary-color;
+    }
+  }
+
+  &__th {
+    padding: 20px 24px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 700;
+    color: $gray-600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    position: relative;
+
+    &--actions {
+      width: 120px;
+      text-align: center;
+    }
+  }
+
+  &__body {
+    background-color: $white;
+  }
+
+  // Row بهبود شده با انیمیشن
+  &__row {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+
+    &:hover {
+      background: linear-gradient(135deg, $gray-50, rgba(248, 250, 252, 0.8));
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__td {
+    padding: 24px;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 500;
+    color: $gray-900;
+    border: none;
+    vertical-align: middle;
+
+    &--actions {
+      text-align: center;
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    padding: 80px 40px;
+    color: $gray-500;
+    font-size: 16px;
+    font-weight: 500;
+
+    &::before {
+      content: "📋";
+      display: block;
+      font-size: 64px;
+      margin-bottom: 16px;
+      opacity: 0.6;
+    }
+  }
+}
+
+// Action Menu Styles - بهبود شده
+.action-menu {
+  position: relative;
+  display: inline-block;
+
+  &__trigger {
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background-color: $gray-50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: $gray-600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999999;
+
+    &:hover {
+      // background-color: $primary-color;
+      // color: white;
+      // border-color: $primary-color;
+      // transform: scale(1.1);
+      // box-shadow: $shadow-md;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(1, 73, 75, 0.1);
+    }
+  }
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 8px;
+    width: 160px;
+    background-color: $white;
+    border-radius: 16px;
+    box-shadow: $shadow-lg;
+    border: 1px solid $border-color;
+    z-index: 99999999;
+    overflow: hidden;
+    animation: dropdownFadeIn 0.2s ease-out;
+  }
+
+  &__list {
+    padding: 8px 0;
+  }
+
+  &__item {
+    width: 100%;
+    padding: 12px 16px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 500;
+    color: $gray-700;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    z-index: 999999999999999;
+
+    &:hover {
+      // background: linear-gradient(135deg, $gray-50, $gray-100);
+      // color: $primary-color;
+
+      .action-icon {
+        transform: scale(1.1);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      background: linear-gradient(135deg, $gray-50, $gray-100);
+    }
+
+    span {
+      flex: 1;
+    }
+  }
+}
+
+// Action Icons - بهبود شده
+.action-icon {
+  transition: all 0.2s ease;
+
+  &--edit {
+    color: $primary-color;
+  }
+
+  &--delete {
+    color: $red-600;
+  }
+
+  &--view {
+    color: $blue-600;
+  }
+}
+
+// انیمیشن dropdown
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+// Pagination - بهبود قابل توجه
+.general-table__pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  margin-top: 0;
+  gap: 24px;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, $gray-50, rgba(241, 245, 249, 0.8));
+  border-top: 1px solid rgba(226, 232, 240, 0.6);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+}
+
+.pagination__info {
+  color: $gray-500;
+  font-size: 14px;
+  font-weight: 500;
+  background: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid $border-color;
+
+  @media (max-width: 768px) {
+    order: 2;
+  }
+}
+
+.pagination__controls {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+    order: 1;
+  }
+}
+
+.pagination__page-size {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  label {
+    color: $gray-700;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+.pagination__select {
+  padding: 10px 16px;
+  border: 2px solid $border-color;
+  border-radius: 12px;
+  background: white;
+  color: $gray-700;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  min-width: 80px;
+
+  &:hover {
+    border-color: $primary-color;
+    background: $gray-50;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba(1, 73, 75, 0.1);
+  }
+}
+
+.pagination__navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+// دکمه‌های pagination بهبود یافته
+.pagination__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  padding: 0 12px;
+  border: 2px solid $border-color;
+  border-radius: 12px;
+  background: white;
+  color: $gray-700;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+
+  &:hover:not(:disabled) {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: $gray-100;
+
+    &:hover {
+      background: $gray-100;
+      border-color: $border-color;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  &--active {
+    background: $primary-color;
+    border-color: $primary-color;
+    color: white;
+    box-shadow: $shadow-md;
+
+    &:hover {
+      background: $primary-color;
+      border-color: $primary-color;
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+    }
+  }
+
+  &--prev,
+  &--next {
+    padding: 0;
+
+    svg {
+      transition: transform 0.2s ease;
+    }
+
+    &:hover:not(:disabled) svg {
+      transform: scale(1.2);
+    }
+  }
+}
+
+.pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination__dots {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 44px;
+  color: $gray-500;
+  font-weight: 700;
+  font-size: 16px;
+  user-select: none;
+}
+
+// Status badges - جدید
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &--active {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+  }
+
+  &--inactive {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+  }
+
+  &--pending {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fde68a;
+  }
+}
+
+// Customer info display
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__details {
+    flex: 1;
+
+    &__name {
+      font-weight: 700;
+      color: $gray-900;
+      margin-bottom: 2px;
+    }
+
+    &__email {
+      font-size: 13px;
+      color: $gray-500;
+    }
+  }
+}
+
+// Code display
+.code-display {
+  font-family: "Courier New", monospace;
+  background: $gray-50;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: $gray-700;
+  border: 1px solid $border-color;
+}
+
+// Responsive Design - بهبود شده
+@media (max-width: 768px) {
+  .general-table {
+    &__th,
+    &__td {
+      padding: 16px 12px;
+      font-size: 13px;
+    }
+
+    &__th {
+      font-size: 12px;
+    }
+  }
+
+  .action-menu {
+    &__dropdown {
+      width: 140px;
+    }
+
+    &__item {
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+  }
+
+  .customer-info {
+    &__avatar {
+      width: 32px;
+      height: 32px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination__navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pagination__pages {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .pagination__btn {
+    min-width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .pagination__dots {
+    min-width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+}

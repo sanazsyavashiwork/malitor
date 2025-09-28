@@ -1,0 +1,33 @@
+.container-form-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  text-align: end;
+  width: 100%;
+}
+
+.text-form-link {
+  font-size: 0.7rem;
+  color: #01494b;
+  margin-block: 10px;
+   display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  align-items: center;
+  text-align: end;
+  width: 100%;
+}
+
+.link-form-link {
+  font-weight: 500;
+  color: #01494b !important;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+font-size: 12px;
+text-decoration: none;
+  &:hover {
+    color: #013739;
+  }
+}

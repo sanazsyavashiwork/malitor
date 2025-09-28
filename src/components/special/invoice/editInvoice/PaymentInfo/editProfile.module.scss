@@ -1,0 +1,125 @@
+.authentication-box-edit {
+  width: 100% !important;
+  height: auto;
+  display: flex;
+  align-items: start !important;
+  justify-content: center !important;
+  max-width: 1200px !important;
+
+  @media only screen and (max-width: 991px) {
+    position: relative;
+    background: rgba(249, 249, 249, 0.9);
+    margin-top: -30px !important;
+
+    .auth-img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  .row {
+    align-items: center;
+    width: 100% !important;
+
+    > .bg-size {
+      height: 100vh;
+      background-size: contain !important;
+      background-color: white;
+      margin: 0;
+    }
+  }
+
+  &.row {
+    .form-login {
+      .card {
+        margin-top: 30px;
+
+        @media only screen and (max-width: 575px) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  h6 {
+    font-weight: 500;
+  }
+
+  .important-note {
+    font-size: 14px;
+
+    @media only screen and (max-width: 767px) {
+      font-size: 13px;
+    }
+  }
+
+  .text-color-2 {
+    &:hover {
+      color: var(--theme-default2);
+    }
+  }
+
+  form {
+    .d-flex {
+      @media only screen and (max-width: 360px) {
+        display: block !important;
+
+        a {
+          margin-top: 10px;
+          display: block;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 991px) {
+      .form-group {
+        .input-group {
+          .input-group-text {
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.captcha-wrapper {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+}
+
+.recaptchaError {
+  margin-top: -30px;
+  font-size: 12px;
+}
+
+.sign-up-image {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.buttonContainer {
+  display: flex;
+  width: 100%;
+  justify-content: end !important;
+}
+
+.flex-end-button {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+
+.width-full {
+  width: 100% !important;
+}

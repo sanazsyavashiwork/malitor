@@ -1,0 +1,175 @@
+// Button.module.scss
+$base: #01494b;
+$baseHover: #01494b;
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  text-decoration: none;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 2px solid;
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// سایزها
+.small {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.medium {
+  padding: 8px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.large {
+  padding: 12px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+// Full width
+.fullWidth {
+  width: 100%;
+}
+
+// Primary styles
+.primaryFilled {
+  background-color: #01494b !important;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: #02646a !important;
+  }
+
+  &:focus {
+    outline-color: #02646a !important;
+  }
+}
+
+.primaryOutline {
+  border: 2px solid #01494b !important;
+  color: #01494b !important;
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: #eff6ff;
+  }
+
+  &:focus {
+    outline-color: #01494b !important;
+  }
+}
+
+.primaryText {
+  color: #01494b !important;
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: #eff6ff;
+  }
+
+  &:focus {
+    outline-color: #01494b !important;
+  }
+}
+
+// Secondary styles
+.secondaryFilled {
+  background-color: #4b5563;
+  color: white;
+  border-radius: 8px !important;
+
+  &:hover:not(:disabled) {
+    background-color: #374151;
+  }
+
+  &:focus {
+    outline-color: #6b7280;
+  }
+}
+
+.secondaryOutline {
+  border: 2px solid #4b5563;
+  color: #4b5563;
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: #f9fafb;
+  }
+
+  &:focus {
+    outline-color: #6b7280;
+  }
+}
+
+.secondaryText {
+  color: #4b5563;
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: #f9fafb;
+  }
+
+  &:focus {
+    outline-color: #6b7280;
+  }
+}
+
+// Danger styles
+.dangerFilled {
+  background-color: #dc2626;
+  color: white;
+
+  &:hover:not(:disabled) {
+    background-color: #b91c1c;
+  }
+
+  &:focus {
+    outline-color: #ef4444;
+  }
+}
+
+.dangerOutline {
+  border: 2px solid #dc2626;
+  color: #dc2626;
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: #fef2f2;
+  }
+
+  &:focus {
+    outline-color: #ef4444;
+  }
+}
+
+.dangerText {
+  color: #dc2626;
+  background-color: transparent;
+
+  &:hover:not(:disabled) {
+    background-color: #fef2f2;
+  }
+
+  &:focus {
+    outline-color: #ef4444;
+  }
+}

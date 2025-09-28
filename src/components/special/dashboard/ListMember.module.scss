@@ -1,0 +1,359 @@
+// Variables - بهبود یافته
+$primary-color: #01494b;
+$primary-light: #0891b2;
+$border-color: rgba(226, 232, 240, 0.8);
+$text-muted: #64748b;
+$text-primary: #1e293b;
+$text-secondary: #334155;
+$background-light: #f8fafc;
+$background-secondary: #f1f5f9;
+$white: #ffffff;
+$focus-color: #3b82f6;
+$focus-shadow: rgba(59, 130, 246, 0.1);
+$box-shadow-light: 0 4px 20px rgba(15, 23, 42, 0.06);
+$box-shadow-medium: 0 8px 32px rgba(15, 23, 42, 0.08);
+$box-shadow-hover: 0 12px 40px rgba(15, 23, 42, 0.12);
+
+// Mixins - بهبود یافته
+@mixin card-style {
+  background: $white;
+  border-radius: 20px;
+  box-shadow: $box-shadow-medium;
+  border: 1px solid $border-color;
+  position: relative;
+  overflow: hidden;
+}
+
+@mixin input-focus {
+  &:focus {
+    outline: none;
+    border-color: $primary-color !important;
+    background: $white;
+    box-shadow: 0 0 0 4px rgba(1, 73, 75, 0.1);
+    transform: translateY(-1px);
+  }
+}
+
+@mixin responsive-mobile {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin fade-in-up($delay: 0s) {
+  animation: fadeInUp 0.6s ease-out $delay both;
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Main container
+.memberListContainer {
+  max-width: 1400px;
+  min-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  min-height: 100vh;
+
+  @include responsive-mobile {
+    padding: 16px;
+  }
+}
+
+// Page header - بهبود زیاد
+.pageHeader {
+  @include card-style;
+  @include fade-in-up(0s);
+  padding: 40px 32px;
+  margin-bottom: 32px;
+
+  // نوار رنگی بالا
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: $primary-color !important;
+  }
+
+  @include responsive-mobile {
+    padding: 24px 20px;
+  }
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  @include responsive-mobile {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
+
+.titleSection {
+  flex: 1;
+}
+
+.pageTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: $primary-color !important;
+  margin: 0 0 8px 0;
+  // background: $primary-color !important;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+
+  @include responsive-mobile {
+    font-size: 24px;
+  }
+}
+
+.pageSubtitle {
+  color: $text-muted;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.headerActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-decoration: none;
+
+  @include responsive-mobile {
+    justify-content: center;
+    width: 100%;
+  }
+
+  // بهبود دکمه اضافه کردن
+  button {
+    background: $primary-color !important;
+    border: none !important;
+    border-radius: 16px !important;
+    padding: 16px 28px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    color: white !important;
+    box-shadow: 0 8px 24px rgba(1, 73, 75, 0.2) !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: $box-shadow-hover !important;
+    }
+  }
+}
+
+// Filter section - بهبود شده
+.filterSection {
+  @include card-style;
+  @include fade-in-up(0.1s);
+  box-shadow: $box-shadow-light;
+  padding: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @include responsive-mobile {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+}
+
+.searchContainer {
+  flex: 2;
+  min-width: 300px;
+
+  @include responsive-mobile {
+    min-width: auto;
+    flex: none;
+  }
+}
+
+.searchInputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 18px 24px 18px 56px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  background: $background-light;
+  transition: all 0.3s ease;
+  color: $text-secondary;
+
+  @include input-focus;
+
+  &::placeholder {
+    color: $text-muted;
+    font-weight: 400;
+  }
+}
+
+.searchIcon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $text-muted;
+  font-size: 20px;
+  transition: color 0.3s ease;
+
+  .searchInput:focus + & {
+    color: $primary-color !important;
+  }
+}
+
+// Table section - بهبود قابل توجه
+.tableContainer {
+  @include card-style;
+  @include fade-in-up(0.2s);
+  overflow: hidden;
+
+  // Header جدول
+  .table-header {
+    background: linear-gradient(
+      135deg,
+      $background-light,
+      $background-secondary
+    );
+    padding: 24px 32px;
+    border-bottom: 2px solid #e2e8f0;
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: $text-primary;
+      margin: 0 0 8px 0;
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}
+
+// Empty state - بهبود شده
+.emptyState {
+  text-align: center;
+  padding: 80px 40px;
+  color: $text-muted;
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0 0 12px 0;
+    color: $text-primary;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+    max-width: 400px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+.emptyIcon {
+  font-size: 72px;
+  margin-bottom: 24px;
+  opacity: 0.6;
+  filter: grayscale(20%);
+}
+
+// اضافه کردن استایل‌های جدید برای بهبود UI
+.statsCard {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: $box-shadow-light;
+  border: 1px solid $border-color;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $box-shadow-hover !important;
+  }
+
+  .statsNumber {
+    font-size: 32px;
+    font-weight: 800;
+    color: $primary-color !important;
+    margin-bottom: 8px;
+  }
+
+  .statsLabel {
+    color: $text-muted;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.filterTags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+
+  .tag {
+    background: $background-secondary;
+    color: $text-secondary;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: $primary-color !important;
+      color: white;
+      transform: scale(1.05);
+    }
+  }
+}
+
+// Responsive improvements
+@include responsive-mobile {
+  .pageTitle {
+    // background: $primary-color !important;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+  }
+}

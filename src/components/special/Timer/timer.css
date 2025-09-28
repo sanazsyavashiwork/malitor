@@ -1,0 +1,46 @@
+        .resend-timer {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center !important;
+          margin-top: 40px;
+        }
+        
+        .timer-text {
+          color: #666;
+          font-size: 12px;
+          margin: 0;
+          text-align: center !important;
+
+        }
+        
+        .resend-button {
+          background-color: white;
+          color: #01494b;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 12px;
+          font-weight: 500;
+          transition: background-color 0.3s ease;
+          direction: rtl;
+        }
+        
+        .resend-button:hover:not(:disabled) {
+          background-color: white;;
+        }
+        
+        .resend-button:disabled {
+          background-color: white;
+          cursor: not-allowed;
+        }
+
+        @media (max-width: 480px) {
+                  .resend-timer {
+
+           margin-top: 10px;
+                  }
+
+        }
