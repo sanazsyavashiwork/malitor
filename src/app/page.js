@@ -1,5 +1,5 @@
 "use client";
-import HomePage from "@/components/special/homePage/homePage";
+import HomePage from "@/components/special/homePage/HomePage";
 import Loading from "@/components/special/loading/loading";
 import WhatsAppButton from "@/components/special/whatsUp/WhatsAppButton";
 import { useLoading } from "@/hooks/useLoading";

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-import "./RenderMenuItem.modules.scss";
+import "./renderMenuItem.modules.scss";
 import { useState } from "react";
 import { ROUTES } from "@/constValues/Routes";
 import { useGetMemberCookie } from "@/hooks/useGetMemberCookie";
