@@ -57,8 +57,8 @@ const validationSchema = Yup.object().shape({
   memoryId: Yup.string()
     .required("شناسه یکتا الزامی است")
     .matches(
-      /^a.{5}$/,
-      "شناسه یکتا باید با 'a' شروع شده و دقیقاً ۶ کاراکتر باشد"
+      /^[aA].{5}$/,
+      "شناسه یکتا باید با 'a' یا 'A' شروع شده و دقیقاً ۶ کاراکتر باشد"
     ),
   privateKey: Yup.string()
     .required("کلید خصوصی الزامی است")
