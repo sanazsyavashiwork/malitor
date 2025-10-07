@@ -9,7 +9,6 @@ const validationSchema = Yup.object().shape({
 
   nationalId: Yup.string()
     .required("کد شخصی الزامی است!")
-    .length(10, "کد شخصی باید ۱۰ رقم باشد!")
     .matches(/^[0-9]+$/, "کد شخصی باید فقط شامل اعداد باشد!"),
 
   economicCode: Yup.string()
