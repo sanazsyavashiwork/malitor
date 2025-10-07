@@ -13,7 +13,6 @@ const validationSchema = Yup.object().shape({
 
   economicCode: Yup.string()
     .required("کد اقتصادی الزامی است!")
-    .length(12, "کد اقتصادی باید ۱۲ رقم باشد!")
     .matches(/^[0-9]+$/, "کد اقتصادی باید فقط شامل اعداد باشد!"),
 
   registrationNumber: Yup.string()
